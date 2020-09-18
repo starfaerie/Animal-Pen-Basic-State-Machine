@@ -6,6 +6,7 @@ namespace State_Machine
     [RequireComponent(typeof(UnityStandardAssets.Characters.ThirdPerson.AICharacterControl))]
     public class StateController : MonoBehaviour
     {
+        //public GameObject[] randPoints; //random points the AI travels to when fleeing
         public GameObject[] patrolPoints; //patrol points of this AI
         public GameObject[] enemies; //enemies of this AI
         public float detectionRadius = 5f; //detection radius of this AI
@@ -19,12 +20,24 @@ namespace State_Machine
         [HideInInspector]
         public State currentState;
         private int _patrolPointNum;
+        //private int _randPoint;
 
         public Transform GetNextNavPoint()
         {
             _patrolPointNum = (_patrolPointNum + 1) % patrolPoints.Length; //iterates through all patrol points, moving to the next point each time this method is called, automagically loops back to the first point when it runs out of points
             return patrolPoints[_patrolPointNum].transform; //returns the position of the next patrol point
         }
+        public Transform getChased()
+        {
+            _patrolPointNum = (_patrolPointNum + 1) % patrolPoints.Length; //iterates through all patrol points, moving to the next point each time this method is called, automagically loops back to the first point when it runs out of points
+            return patrolPoints[_patrolPointNum].transform; //returns the position of the next patrol point
+        }
+
+        /*public Transform GetNextRandPoint()
+        {
+            _randPoint = transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * speed);
+            return randPoints[_randPoint].transform;
+        */
 
         public void ChangeColor(Color color)
         {
