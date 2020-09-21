@@ -31,8 +31,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             character.Move(agent.remainingDistance > agent.stoppingDistance ? agent.desiredVelocity : Vector3.zero,
                 false, false);
         }
-
-
+        
+        //changed this to Vector3 cause it makes more sense -Astrid
         public void SetTarget(Vector3 target)
         {
             this.target = target;
