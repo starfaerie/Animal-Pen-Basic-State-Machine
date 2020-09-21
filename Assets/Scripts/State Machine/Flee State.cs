@@ -6,7 +6,7 @@ namespace State_Machine
 {
     public class FleeState : State
     {
-        private Transform _destination;
+        private Vector3 _destination;
         public FleeState(StateController stateController) : base(stateController)
         {
 

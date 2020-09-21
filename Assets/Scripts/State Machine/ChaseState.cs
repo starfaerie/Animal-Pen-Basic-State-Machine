@@ -4,7 +4,7 @@ namespace State_Machine
 {
     public class ChaseState : State
     {
-        private Transform _destination;
+        private Vector3 _destination;
         public ChaseState(StateController stateController): base(stateController)
         {
 
@@ -20,7 +20,7 @@ namespace State_Machine
         {
             if (StateController.enemyToChase == null) return;
         
-            _destination = StateController.enemyToChase.transform;
+            _destination = StateController.enemyToChase.transform.position;
             StateController.ai.SetTarget(_destination);
         }
         public override void OnStateEnter()

@@ -4,7 +4,7 @@ namespace State_Machine
 {
     public class PatrolState : State
     {
-        private Transform _destination;
+        private Vector3 _destination;
 
         public PatrolState(StateController stateController) : base(stateController)
         {

@@ -22,15 +22,15 @@ namespace State_Machine
         private int _patrolPointNum;
         //private int _randPoint;
 
-        public Transform GetNextNavPoint()
+        public Vector3 GetNextNavPoint()
         {
             _patrolPointNum = (_patrolPointNum + 1) % patrolPoints.Length; //iterates through all patrol points, moving to the next point each time this method is called, automagically loops back to the first point when it runs out of points
-            return patrolPoints[_patrolPointNum].transform; //returns the position of the next patrol point
+            return patrolPoints[_patrolPointNum].transform.position; //returns the position of the next patrol point
         }
-        public Transform getChased()
+        public Vector3 getChased()
         {
             _patrolPointNum = (_patrolPointNum + 1) % patrolPoints.Length; //iterates through all patrol points, moving to the next point each time this method is called, automagically loops back to the first point when it runs out of points
-            return patrolPoints[_patrolPointNum].transform; //returns the position of the next patrol point
+            return patrolPoints[_patrolPointNum].transform.position; //returns the position of the next patrol point
         }
 
         /*public Transform GetNextRandPoint()
