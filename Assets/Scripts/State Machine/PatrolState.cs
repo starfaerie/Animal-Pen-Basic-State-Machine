@@ -15,11 +15,12 @@ namespace State_Machine
         {
             if (StateController.CheckIfInRange())
             {
-                StateController.SetState(new PatrolState(StateController));
+                StateController.SetState(new FleeState(StateController));
             }
         }
         public override void Act()
         {
+            if (Vector3.Distance(StateController.transform.position, _destination) > StateController.tagRadius) return;
             _destination = StateController.GetNextNavPoint();
             StateController.ai.SetTarget(_destination);
         }
@@ -29,7 +30,7 @@ namespace State_Machine
             _destination = StateController.GetNextNavPoint();
             if(StateController.ai.agent != null)
             {
-                StateController.ai.agent.speed = 1f;
+                StateController.ai.agent.speed = 0.7f;
             }
             StateController.ai.SetTarget(_destination);
             StateController.ChangeColor(Color.blue);

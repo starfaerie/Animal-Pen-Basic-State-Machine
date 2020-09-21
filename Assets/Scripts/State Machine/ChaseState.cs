@@ -25,8 +25,8 @@ namespace State_Machine
         }
         public override void OnStateEnter()
         {
-            StateController.ChangeColor(Color.red);
-            StateController.ai.agent.speed = .5f;
+            StateController.ChangeColor(Color.green);
+            StateController.ai.agent.speed = .7f;
         }
     }
 }
