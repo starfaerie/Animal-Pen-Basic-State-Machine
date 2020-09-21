@@ -19,16 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a6d7c9-0448-413d-b1a2-bfa599f710ee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Animal-Pen-Basic-State-Machine/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Animal-Pen-Basic-State-Machine/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Animal-Pen-Basic-State-Machine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Animal-Pen-Basic-State-Machine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animal Pen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animal Pen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/State Machine/ChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/State Machine/ChaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/State Machine/Flee State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/State Machine/Flee State.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/State Machine/PatrolState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/State Machine/PatrolState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/State Machine/StateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/State Machine/StateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-    </list>
+    <list default="true" id="17a6d7c9-0448-413d-b1a2-bfa599f710ee" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +88,7 @@
       <workItem from="1600405934155" duration="593000" />
       <workItem from="1600663914374" duration="4997000" />
       <workItem from="1600669223450" duration="148000" />
-      <workItem from="1600669435657" duration="9510000" />
+      <workItem from="1600669435657" duration="9725000" />
     </task>
     <servers />
   </component>
