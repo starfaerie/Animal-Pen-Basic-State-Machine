@@ -4,7 +4,8 @@ namespace State_Machine
 {
     public class PatrolState : State
     {
-        private Transform _destination;
+        private Vector3 _destination;
+        private float _range = 5f;
 
         public PatrolState(StateController stateController) : base(stateController)
         {
@@ -13,18 +14,25 @@ namespace State_Machine
 
         public override void CheckTransitions()
         {
-            if (StateController.CheckIfInRange())
+            //if the player is in range
+            if (StateController.CheckIfInRange(_range))
             {
-                StateController.SetState(new PatrolState(StateController));
+                //move to the flee state
+                StateController.SetState(new FleeState(StateController));
             }
         }
         public override void Act()
         {
+            //if the current _destination is within 2 meters
+            if (!(Vector3.Distance(StateController.gameObject.transform.position, _destination) < 2f)) return;
+            Debug.Log(("moving to next"));
             _destination = StateController.GetNextNavPoint();
             StateController.ai.SetTarget(_destination);
+            
+            Debug.Log(_destination);
         }
 
-        public override void OnStateEnter()
+        private void GoToNextPoint()
         {
             _destination = StateController.GetNextNavPoint();
             if(StateController.ai.agent != null)
@@ -33,6 +41,11 @@ namespace State_Machine
             }
             StateController.ai.SetTarget(_destination);
             StateController.ChangeColor(Color.blue);
+        }
+
+        public override void OnStateEnter()
+        {
+            GoToNextPoint();
         }
     }
 }

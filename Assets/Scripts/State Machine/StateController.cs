@@ -22,15 +22,22 @@ namespace State_Machine
         private int _patrolPointNum;
         //private int _randPoint;
 
-        public Transform GetNextNavPoint()
+        public Vector3 GetNextNavPoint()
         {
             _patrolPointNum = (_patrolPointNum + 1) % patrolPoints.Length; //iterates through all patrol points, moving to the next point each time this method is called, automagically loops back to the first point when it runs out of points
-            return patrolPoints[_patrolPointNum].transform; //returns the position of the next patrol point
+            return patrolPoints[_patrolPointNum].transform.position; //returns the position of the next patrol point
         }
-        public Transform getChased()
+        public Vector3 getChased()
         {
             _patrolPointNum = (_patrolPointNum + 1) % patrolPoints.Length; //iterates through all patrol points, moving to the next point each time this method is called, automagically loops back to the first point when it runs out of points
-            return patrolPoints[_patrolPointNum].transform; //returns the position of the next patrol point
+            return patrolPoints[_patrolPointNum].transform.position; //returns the position of the next patrol point
+        }
+
+        public Vector3 getFlee()
+        {
+            Vector3 currentPos = gameObject.transform.position;
+            Vector3 directionToFlee = currentPos - enemyToChase.transform.position;
+            return directionToFlee.normalized * 5 + currentPos;
         }
 
         /*public Transform GetNextRandPoint()
@@ -50,14 +57,14 @@ namespace State_Machine
             }
         }
 
-        public bool CheckIfInRange()
+        public bool CheckIfInRange(float range)
         {
             if (enemies == null) return false;
         
             foreach (GameObject go in enemies)
             {
-                if (!(Vector3.Distance(go.transform.position, transform.position) < detectionRadius)) continue;
-            
+                if (!(Vector3.Distance(go.transform.position, transform.position) < range)) continue;
+
                 enemyToChase = go;
                 return true;
             }

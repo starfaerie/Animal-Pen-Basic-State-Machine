@@ -674,7 +674,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880401614}
-  m_LocalRotation: {x: 0.22350498, y: 0.000000002647352, z: -6.07053e-10, w: 0.9747028}
+  m_LocalRotation: {x: 0.223505, y: -0.000000038518515, z: 0.00000000883252, w: 0.9747028}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1715,6 +1715,12 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 1183705861}
   - {fileID: 1123336147}
+  - {fileID: 1406534917}
+  - {fileID: 123881434}
+  - {fileID: 1687680004}
+  - {fileID: 2144860299}
+  - {fileID: 981812655}
+  - {fileID: 1547541216}
   enemies:
   - {fileID: 341125904}
   detectionRadius: 5

@@ -4,14 +4,15 @@ namespace State_Machine
 {
     public class ChaseState : State
     {
-        private Transform _destination;
+        private Vector3 _destination;
+        private float _range = 10f;
         public ChaseState(StateController stateController): base(stateController)
         {
 
         }
         public override void CheckTransitions()
         {
-            if (!StateController.CheckIfInRange())
+            if (!StateController.CheckIfInRange(_range))
             {
                 StateController.SetState(new PatrolState(StateController));
             }
@@ -20,13 +21,13 @@ namespace State_Machine
         {
             if (StateController.enemyToChase == null) return;
         
-            _destination = StateController.enemyToChase.transform;
+            _destination = StateController.enemyToChase.transform.position;
             StateController.ai.SetTarget(_destination);
         }
         public override void OnStateEnter()
         {
-            StateController.ChangeColor(Color.red);
-            StateController.ai.agent.speed = .5f;
+            StateController.ChangeColor(Color.green);
+            StateController.ai.agent.speed = .8f;
         }
     }
 }
